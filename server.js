@@ -19,6 +19,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import todoRoutes from "./routes/todoRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -30,6 +31,8 @@ connectDB();
 
 app.use("/api/todos", todoRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/admin", adminRoutes);
+
 
 
 app.get("/", (req, res) => {

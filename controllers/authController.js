@@ -25,7 +25,6 @@ export const register = async (req, res) => {
             id: user._id
         }, process.env.JWT_SECRET, {
             expiresIn: "7d",
-
         });
 
         res.json({
