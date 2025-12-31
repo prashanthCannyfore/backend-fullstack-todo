@@ -1,4 +1,5 @@
 import Todo from "../models/Todo.js"
+import User from "../models/User.js"
 
 // export const getTodos = async (req, res) => {
 //     const todos = await Todo.find({ user: req.user._id }).sort({ createdAt: -1 });
@@ -47,7 +48,7 @@ export const getTodos = async (req, res) => {
 
     const filter = {
       user: req.user._id,
-      text: { $regex: search, $options: "i" } // ✅ correct field
+      text: { $regex: search, $options: "i" } 
     };
 
     const totalTodos = await Todo.countDocuments(filter);
